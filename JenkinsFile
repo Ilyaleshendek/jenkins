@@ -22,3 +22,5 @@ pipeline {
         }
         failure {
             echo 'demande à ton père'
+}
+}
