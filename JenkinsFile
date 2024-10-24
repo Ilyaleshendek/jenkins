@@ -1,9 +1,24 @@
 pipeline {
     agent any
+
     stages {
-        stage('Clonage du dépôt GitHub') {
-          steps {
-            git branch: ‘main’, url :
-'https://github.com/csurqunix/OSDetector.git'
+        stage('Get the Code !') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Ilyaleshendek/jenkins.git'
             }
         }
+
+        stage('Setting permissions and running the script') {
+            steps {
+                sh 'chmod +x os_detector.py'
+                sh 'python3 os_detector.py'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'ça fonctionne ma gueule'
+        }
+        failure {
+            echo 'demande à ton père'
