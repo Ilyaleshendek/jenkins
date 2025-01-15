@@ -18,9 +18,9 @@ pipeline {
 
     post {
         success {
-            echo 'ça fonctionne ma gueule'
+            echo 'ça fonctionne'
         }
         failure {
-            echo 'demande à ton père'
+            echo 'ça ne fonctionne pas'
 }
 }
